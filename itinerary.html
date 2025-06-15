@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itinerary - Let's Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="brand-text">Let's Travel</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="trip-form.html" class="nav-link">Plan Trip</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <div class="nav-auth" id="navAuth">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div class="nav-user hidden" id="navUser">
+                    <a href="dashboard.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span id="userName">User</span>
+                    </a>
+                    <button class="btn btn-outline" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="itinerary-hero" id="itineraryHero">
+        <div class="hero-background">
+            <img id="heroImage" src="" alt="Destination" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <a href="destinations.html" class="back-link">
+                    <svg class="back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12,19 5,12 12,5"></polyline>
+                    </svg>
+                    Back to destinations
+                </a>
+                
+                <div class="hero-info">
+                    <h1 class="hero-title" id="destinationName">Loading...</h1>
+                    <p class="hero-subtitle" id="destinationDescription">Loading destination details...</p>
+                    
+                    <div class="hero-badges" id="heroBadges">
+                        <!-- Badges will be loaded by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="itinerary-layout">
+                <!-- Main Content -->
+                <div class="itinerary-main">
+                    <!-- Highlights -->
+                    <div class="content-card">
+                        <h2 class="card-title">What Makes It Special</h2>
+                        <div class="highlights-grid" id="highlightsGrid">
+                            <!-- Highlights will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Transportation Options -->
+                    <div class="content-card">
+                        <h2 class="card-title">Transportation Options</h2>
+                        <div class="transport-grid" id="transportGrid">
+                            <!-- Transport options will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Accommodation Options -->
+                    <div class="content-card">
+                        <h2 class="card-title">Accommodation Options</h2>
+                        <div class="accommodation-grid" id="accommodationGrid">
+                            <!-- Accommodation options will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Daily Itinerary -->
+                    <div class="content-card">
+                        <h2 class="card-title">Day-by-Day Itinerary</h2>
+                        <div class="itinerary-timeline" id="itineraryTimeline">
+                            <!-- Itinerary will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="itinerary-sidebar">
+                    <!-- Cost Calculator -->
+                    <div class="sidebar-card sticky">
+                        <h3 class="sidebar-title">Trip Cost Calculator</h3>
+                        
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <svg class="label-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    Number of Travelers
+                                </label>
+                                <select id="travelersSelect" class="form-select">
+                                    <option value="1">1 Person</option>
+                                    <option value="2" selected>2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5+ People</option>
+                                </select>
+                            </div>
+
+                            <div class="cost-breakdown" id="costBreakdown">
+                                <!-- Cost breakdown will be loaded by JavaScript -->
+                            </div>
+
+                            <div class="total-cost">
+                                <div class="total-row">
+                                    <span class="total-label">Total Cost</span>
+                                    <span class="total-amount" id="totalCost">₹0</span>
+                                </div>
+                                <p class="total-note" id="totalNote">For 2 traveler(s)</p>
+                            </div>
+
+                            <div class="save-trip" id="saveTripSection">
+                                <!-- Save trip button will be loaded by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Info -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Quick Info</h3>
+                        <div class="quick-info" id="quickInfo">
+                            <!-- Quick info will be loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/itinerary.js"></script>
+</body>
+</html>

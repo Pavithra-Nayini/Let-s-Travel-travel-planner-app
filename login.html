@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Let's Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="brand-link">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="brand-text">Let's Travel</span>
+                </a>
+                <h2 class="auth-title">Welcome back!</h2>
+                <p class="auth-subtitle">
+                    Sign in to access your saved trips and personalized recommendations
+                </p>
+            </div>
+
+            <form class="auth-form" id="loginForm">
+                <div id="loginError" class="error-message hidden"></div>
+
+                <div class="form-group">
+                    <label class="form-label">Email address</label>
+                    <div class="input-group">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <input type="email" name="email" placeholder="Enter your email" class="form-input" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-group">
+                        <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <circle cx="12" cy="16" r="1"></circle>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <input type="password" name="password" placeholder="Enter your password" class="form-input" required>
+                        <button type="button" class="password-toggle" onclick="togglePassword(this)">
+                            <svg class="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox">
+                        <span class="checkbox-text">Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full" id="loginBtn">
+                    <span>Sign In</span>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p class="auth-switch">
+                    Don't have an account? 
+                    <a href="register.html" class="auth-link">Sign up here</a>
+                </p>
+            </div>
+
+            <div class="demo-info">
+                <div class="demo-divider">
+                    <span>Demo Login</span>
+                </div>
+                <p class="demo-text">
+                    Use any email and password to try the demo
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

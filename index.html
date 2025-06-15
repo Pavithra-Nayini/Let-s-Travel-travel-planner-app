@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Travel - Discover India Within Your Budget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="brand-text">Let's Travel</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="trip-form.html" class="nav-link">Plan Trip</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <div class="nav-auth" id="navAuth">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div class="nav-user hidden" id="navUser">
+                    <a href="dashboard.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span id="userName">User</span>
+                    </a>
+                    <button class="btn btn-outline" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="https://images.pexels.com/photos/1183099/pexels-photo-1183099.jpeg" alt="India Travel" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title">
+                    Discover <span class="text-accent">Incredible India</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Plan your perfect Indian adventure within your budget
+                </p>
+                
+                <!-- Search Forms -->
+                <div class="search-container">
+                    <div class="search-grid">
+                        <!-- Destination Search -->
+                        <div class="search-card">
+                            <h3 class="search-title">Search by Destination</h3>
+                            <form class="search-form" id="destinationForm">
+                                <div class="input-group">
+                                    <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <path d="m21 21-4.35-4.35"></path>
+                                    </svg>
+                                    <input type="text" placeholder="Where do you want to go?" id="destinationInput" class="form-input">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-full">
+                                    <span>Find Destinations</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Budget Search -->
+                        <div class="search-card">
+                            <h3 class="search-title">Search by Budget</h3>
+                            <form class="search-form" id="budgetForm">
+                                <select id="budgetSelect" class="form-select">
+                                    <option value="">Select your budget</option>
+                                    <option value="5000">Under ₹5,000</option>
+                                    <option value="10000">₹5,000 - ₹10,000</option>
+                                    <option value="15000">₹10,000 - ₹15,000</option>
+                                    <option value="25000">₹15,000 - ₹25,000</option>
+                                    <option value="50000">Above ₹25,000</option>
+                                </select>
+                                <button type="submit" class="btn btn-secondary btn-full">
+                                    <span>Plan My Trip</span>
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12,5 19,12 12,19"></polyline>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="trip-form.html" class="hero-link">
+                        <span>Need help planning? Use our trip planner</span>
+                        <svg class="hero-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12,5 19,12 12,19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Let's Travel?</h2>
+                <p class="section-subtitle">
+                    We make exploring India affordable, accessible, and absolutely amazing
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Budget-Friendly Planning</h3>
+                    <p class="feature-description">
+                        Find amazing destinations that fit your budget perfectly with detailed cost breakdowns
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6"></path>
+                            <path d="m21 12-6 0m-6 0-6 0"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Detailed Itineraries</h3>
+                    <p class="feature-description">
+                        Get day-by-day plans with activities, meals, and transportation options
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Local Experiences</h3>
+                    <p class="feature-description">
+                        Discover authentic Indian culture with curated local experiences and hidden gems
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Destinations</h2>
+                <p class="section-subtitle">
+                    Explore the most loved destinations across India
+                </p>
+            </div>
+
+            <div class="destinations-grid" id="popularDestinations">
+                <!-- Destinations will be loaded by JavaScript -->
+            </div>
+
+            <div class="section-cta">
+                <a href="destinations.html" class="btn btn-dark btn-large">
+                    <span>View All Destinations</span>
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12,5 19,12 12,19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Explore India?</h2>
+                <p class="cta-subtitle">
+                    Start planning your dream trip today with our smart budget planner
+                </p>
+                <div class="cta-buttons">
+                    <a href="trip-form.html" class="btn btn-white">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                            <circle cx="12" cy="13" r="4"></circle>
+                        </svg>
+                        <span>Plan Your Trip</span>
+                    </a>
+                    <a href="destinations.html" class="btn btn-outline-white">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h6l6 18 4-16h8"></path>
+                            <path d="M14 11a2 2 0 1 1-4 0 4 4 0 0 1 8 0c0 1-1 2-2 3h-4"></path>
+                        </svg>
+                        <span>Browse Destinations</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

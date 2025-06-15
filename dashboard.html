@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Let's Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="brand-text">Let's Travel</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="trip-form.html" class="nav-link">Plan Trip</a>
+                <a href="destinations.html" class="nav-link">Destinations</a>
+                <div class="nav-auth" id="navAuth">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div class="nav-user hidden" id="navUser">
+                    <a href="dashboard.html" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span id="userName">User</span>
+                    </a>
+                    <button class="btn btn-outline" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">
+                    Welcome back, <span class="text-accent" id="welcomeName">User</span>!
+                </h1>
+                <p class="dashboard-subtitle">
+                    Here are your saved trips and travel plans
+                </p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Saved Trips</p>
+                            <p class="stat-value" id="savedTripsCount">0</p>
+                        </div>
+                        <div class="stat-icon stat-icon-orange">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Total Budget Planned</p>
+                            <p class="stat-value" id="totalBudget">₹0</p>
+                        </div>
+                        <div class="stat-icon stat-icon-green">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-info">
+                            <p class="stat-label">Upcoming Trips</p>
+                            <p class="stat-value" id="upcomingTrips">0</p>
+                        </div>
+                        <div class="stat-icon stat-icon-blue">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <a href="trip-form.html" class="btn btn-primary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span>Plan New Trip</span>
+                </a>
+                <a href="destinations.html" class="btn btn-outline">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Browse Destinations</span>
+                </a>
+            </div>
+
+            <!-- Saved Trips -->
+            <div class="trips-section">
+                <h2 class="section-title">Your Saved Trips</h2>
+                
+                <div class="trips-container" id="tripsContainer">
+                    <!-- Trips will be loaded by JavaScript -->
+                </div>
+
+                <!-- No Trips -->
+                <div class="no-trips hidden" id="noTrips">
+                    <div class="no-trips-content">
+                        <svg class="no-trips-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <h3 class="no-trips-title">No saved trips yet</h3>
+                        <p class="no-trips-text">
+                            Start planning your dream vacation and save your favorite trips
+                        </p>
+                        <a href="trip-form.html" class="btn btn-primary">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            <span>Plan Your First Trip</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Travel Tips -->
+            <div class="tips-banner">
+                <h3 class="tips-title">💡 Travel Tips</h3>
+                <div class="tips-grid">
+                    <div class="tip">• Book accommodations in advance during peak seasons</div>
+                    <div class="tip">• Keep digital copies of important documents</div>
+                    <div class="tip">• Try local street food for authentic experiences</div>
+                    <div class="tip">• Learn basic local phrases for better interactions</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

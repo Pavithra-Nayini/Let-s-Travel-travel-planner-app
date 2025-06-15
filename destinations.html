@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Let's Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="brand-text">Let's Travel</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="trip-form.html" class="nav-link">Plan Trip</a>
+                <a href="destinations.html" class="nav-link active">Destinations</a>
+                <div class="nav-auth" id="navAuth">
+                    <a href="login.html" class="nav-link">Login</a>
+                    <a href="register.html" class="btn btn-primary">Sign Up</a>
+                </div>
+                <div class="nav-user hidden" id="navUser">
+                    <a href="dashboard.html" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span id="userName">User</span>
+                    </a>
+                    <button class="btn btn-outline" onclick="logout()">Logout</button>
+                </div>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Header -->
+            <div class="page-header">
+                <h1 class="page-title">
+                    Discover <span class="text-accent">Amazing Destinations</span>
+                </h1>
+                <p class="page-subtitle">
+                    Explore incredible places across India that fit your budget and preferences
+                </p>
+                <div id="budgetFilter" class="budget-filter hidden">
+                    <div class="budget-badge">
+                        <svg class="budget-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                        <span id="budgetText">Destinations under budget</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters-container">
+                <div class="filters-grid">
+                    <!-- Search -->
+                    <div class="filter-group">
+                        <div class="input-group">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                            <input type="text" placeholder="Search destinations..." id="searchInput" class="form-input">
+                        </div>
+                    </div>
+
+                    <!-- Budget Filter -->
+                    <select id="budgetSelect" class="form-select">
+                        <option value="">All Budgets</option>
+                        <option value="5000">Under ₹5,000</option>
+                        <option value="10000">Under ₹10,000</option>
+                        <option value="15000">Under ₹15,000</option>
+                        <option value="20000">Under ₹20,000</option>
+                        <option value="30000">Under ₹30,000</option>
+                    </select>
+
+                    <!-- State Filter -->
+                    <select id="stateSelect" class="form-select">
+                        <option value="">All States</option>
+                    </select>
+
+                    <!-- Sort -->
+                    <select id="sortSelect" class="form-select">
+                        <option value="popular">Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results-info">
+                <p id="resultsCount">Loading destinations...</p>
+            </div>
+
+            <!-- Destinations Grid -->
+            <div class="destinations-grid" id="destinationsGrid">
+                <!-- Destinations will be loaded by JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results hidden" id="noResults">
+                <div class="no-results-content">
+                    <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <h3 class="no-results-title">No destinations found</h3>
+                    <p class="no-results-text">
+                        Try adjusting your filters or search terms to find more destinations.
+                    </p>
+                    <button class="btn btn-primary" onclick="clearFilters()">
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/destinations.js"></script>
+</body>
+</html>
